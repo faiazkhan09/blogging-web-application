@@ -42,10 +42,10 @@
     <main role="main" class="container">
         <div class="row">
             <div class="col-md-8">
-            {% with messages = get_flashed_messages(with_categories=true) %} <!--get_flashed_messages gets the message from main.py & with_categories gets the category of message, for more info check main.py -->
+            {% with messages = get_flashed_messages(with_categories=true) %} 
                 {% if messages %}
                     {% for category, message in messages %}
-                        <div class="alert alert-{{ category }}"> <!--This class is from bootstrap which modifies the flashed message. search for the class in """ for more info-->
+                        <div class="alert alert-{{ category }}"> 
                             {{ message }}
                         </div>
                     {% endfor %}
