@@ -7,7 +7,7 @@
                 <legend class="border-bottom mb-4">{{ legend }}</legend>  
 
                 <div class="form-group">
-                    {{ form.title.label(class="form-control-label") }} <!--here form is used which is passesd from main.py. Classes of form.py were saved in form in main.py, which is poasses here-->
+                    {{ form.title.label(class="form-control-label") }} 
                     
                     {% if form.title.errors %}
                         {{ form.title(class="form-control form-control-md is-invalid") }}
@@ -40,7 +40,7 @@
 
             </fieldset>
             <div class="form-group mt-3 mb-2">
-                {{ form.submit(class="btn btn-outline-info")}} <!--submit field shows login button because in routes.py file we are passing the LoginForm class in form-->
+                {{ form.submit(class="btn btn-outline-info")}} 
             </div>
         </form>
     </div>
