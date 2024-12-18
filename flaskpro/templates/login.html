@@ -1,0 +1,58 @@
+{% extends 'layout.html'%}
+{% block content%}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag( )}}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Login</legend>  
+
+            <div class="form-group">
+                {{ form.email.label(class="form-control-label") }} <!--here form is used which is passesd from main.py. Classes of form.py were saved in form in main.py, which is poasses here-->
+                
+                {% if form.email.errors %}
+                    {{ form.email(class="form-control form-control-md is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email(class="form-control form-control-md") }}
+                {% endif %}
+
+            </div>
+            <div class="form-group">
+                {{ form.password.label(class="form-control-label") }}
+                
+                {% if form.password.errors %}
+                    {{ form.password(class="form-control form-control-md is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.password(class="form-control form-control-md") }}
+                {% endif %}
+
+            </div>
+            <div class="form-check">
+                {{ form.remember_me(class="form-check-input") }}
+                {{ form.remember_me.label(class="form-check-label") }}
+            </div>
+
+        </fieldset>
+        <div class="form-group mt-3 mb-2">
+            {{ form.submit(class="btn btn-outline-info")}} <!--submit field shows login button because in main.py file we are passing the LoginForm class in form-->
+        </div>
+        <small class="text-muted ml-2">
+            <a href="#">Forgot Password</a>
+        </small>
+    </form>
+</div>
+<div class="border-top pt-3">
+    <small class="text-muted">
+        Don't have an account? <a class="ml-2" href="{{ url_for('signup')}}">Sign Up</a> <!--here signup is the name of the function(endpoint) used in main.py to define the path /signup-->
+    </small>
+</div>
+{% endblock %}
