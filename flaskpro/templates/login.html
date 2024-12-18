@@ -7,7 +7,7 @@
             <legend class="border-bottom mb-4">Login</legend>  
 
             <div class="form-group">
-                {{ form.email.label(class="form-control-label") }} <!--here form is used which is passesd from main.py. Classes of form.py were saved in form in main.py, which is poasses here-->
+                {{ form.email.label(class="form-control-label") }} 
                 
                 {% if form.email.errors %}
                     {{ form.email(class="form-control form-control-md is-invalid") }}
@@ -43,7 +43,7 @@
 
         </fieldset>
         <div class="form-group mt-3 mb-2">
-            {{ form.submit(class="btn btn-outline-info")}} <!--submit field shows login button because in main.py file we are passing the LoginForm class in form-->
+            {{ form.submit(class="btn btn-outline-info")}} 
         </div>
         <small class="text-muted ml-2">
             <a href="#">Forgot Password</a>
@@ -52,7 +52,7 @@
 </div>
 <div class="border-top pt-3">
     <small class="text-muted">
-        Don't have an account? <a class="ml-2" href="{{ url_for('signup')}}">Sign Up</a> <!--here signup is the name of the function(endpoint) used in main.py to define the path /signup-->
+        Don't have an account? <a class="ml-2" href="{{ url_for('signup')}}">Sign Up</a> 
     </small>
 </div>
 {% endblock %}
